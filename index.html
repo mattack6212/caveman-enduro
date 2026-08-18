@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>4-Hour Team Enduro — Caveman Combine at Atlanta Motorsports Park</title>
+<meta name="description" content="4 hours. 4 drivers. 1 kart. A team endurance race at Atlanta Motorsports Park benefiting Caveman Combine.">
+<meta property="og:title" content="4 Hours. 4 Drivers. 1 Kart.">
+<meta property="og:description" content="Team endurance kart race at Atlanta Motorsports Park — Georgia's fastest outdoor track. Benefiting Caveman Combine.">
+<meta property="og:type" content="website">
+<style>
+:root{
+  --bg:#0B0B0D; --surface:#151519; --line:#26262C;
+  --accent:#FF4D1C; --amber:#F5A623;
+  --text:#F6F5F1; --muted:#9C9C96;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg); color:var(--text);
+  font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.1;letter-spacing:-.02em;font-weight:800}
+
+/* HERO */
+.hero{padding:56px 0 40px;text-align:center;border-bottom:1px solid var(--line)}
+.kicker{
+  display:inline-block;font-size:12px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);
+  padding:6px 12px;border-radius:99px;margin-bottom:22px;
+}
+h1{font-size:clamp(38px,11vw,64px);text-transform:uppercase}
+h1 .sep{color:var(--accent)}
+.sub{margin-top:18px;font-size:18px;color:var(--muted);max-width:460px;margin-left:auto;margin-right:auto}
+.facts{margin-top:26px;font-size:15px;color:var(--text);line-height:2}
+.facts b{color:var(--amber);font-weight:700}
+.tbd{color:var(--muted);font-style:italic}
+
+.btn{
+  display:block;width:100%;max-width:340px;margin:30px auto 0;
+  background:var(--accent);color:#fff;text-decoration:none;
+  font-size:18px;font-weight:800;letter-spacing:.02em;
+  padding:18px 24px;border-radius:10px;border:none;cursor:pointer;
+  text-transform:uppercase;transition:transform .12s ease,background .12s ease;
+}
+.btn:active{transform:scale(.98)}
+.btn.ghost{background:transparent;color:var(--text);border:1.5px solid var(--line);font-size:16px}
+
+/* SECTIONS */
+section{padding:44px 0;border-bottom:1px solid var(--line)}
+h2{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+h3{font-size:26px;margin-bottom:14px}
+p{color:var(--muted);margin-bottom:14px}
+p strong{color:var(--text);font-weight:600}
+
+.video{position:relative;padding-bottom:56.25%;height:0;border-radius:12px;overflow:hidden;background:var(--surface);margin-bottom:14px}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.caption{font-size:13px;color:var(--muted);text-align:center}
+
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px}
+.stat .n{font-size:28px;font-weight:800;color:var(--amber);line-height:1}
+.stat .l{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-top:8px}
+
+ul{list-style:none;margin:8px 0 0}
+li{color:var(--muted);padding:12px 0 12px 26px;position:relative;border-top:1px solid var(--line)}
+li:first-child{border-top:none}
+li::before{content:"";position:absolute;left:4px;top:20px;width:8px;height:8px;background:var(--accent);border-radius:2px;transform:rotate(45deg)}
+li b{color:var(--text);font-weight:650}
+
+.cause{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:12px;padding:24px}
+
+/* FORM */
+form{margin-top:6px}
+label{display:block;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:18px 0 7px}
+input,select,textarea{
+  width:100%;background:var(--surface);border:1px solid var(--line);border-radius:9px;
+  color:var(--text);font:16px/1.4 inherit;padding:14px;
+}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+textarea{min-height:80px;resize:vertical}
+.check{display:flex;gap:12px;align-items:flex-start;margin-top:20px}
+.check input{width:20px;height:20px;flex:0 0 20px;margin-top:2px;accent-color:var(--accent)}
+.check label{margin:0;text-transform:none;letter-spacing:0;font-size:15px;font-weight:400;color:var(--text);line-height:1.45}
+.note{font-size:13px;color:var(--muted);margin-top:16px;text-align:center}
+#thanks{display:none;background:var(--surface);border:1px solid var(--amber);border-radius:12px;padding:28px;text-align:center}
+#thanks h3{color:var(--amber)}
+
+footer{padding:36px 0 60px;text-align:center;color:var(--muted);font-size:13px}
+footer a{color:var(--amber)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">Benefiting Caveman Combine</span>
+    <h1>4 Hours<span class="sep">.</span><br>4 Drivers<span class="sep">.</span><br>1 Kart<span class="sep">.</span></h1>
+    <p class="sub">A team endurance race on Georgia's fastest outdoor kart track. Bring your crew. Out-last everybody.</p>
+    <div class="facts">
+      <b>Where</b> &nbsp;Atlanta Motorsports Park &middot; Dawsonville, GA<br>
+      <b>When</b> &nbsp;<span class="tbd">Date &amp; time — announcing soon</span><br>
+      <b>Format</b> &nbsp;4-hour team enduro &middot; Arrive &amp; Drive
+    </div>
+    <a href="#rsvp" class="btn">Count Me In</a>
+    <a href="sponsor.html" class="btn ghost">Sponsor a Driver</a>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>The Track</h2>
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/59U-ofJkOq4" title="Atlanta Motorsports Park" loading="lazy" allow="accelerometer;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <p class="caption">Georgia's fastest outdoor go-karting track</p>
+    <div class="stats">
+      <div class="stat"><div class="n">~1 mi</div><div class="l">Track length</div></div>
+      <div class="stat"><div class="n">43 ft</div><div class="l">Elevation change</div></div>
+      <div class="stat"><div class="n">55+ mph</div><div class="l">Kart top speed</div></div>
+      <div class="stat"><div class="n">CIK A</div><div class="l">F1-grade circuit</div></div>
+    </div>
+    <p style="margin-top:22px">AMP is one of only a handful of pro-kart tracks in America built to full <strong>CIK Level A / F1 standard</strong>, designed by Formula 1 track architect <strong>Hermann Tilke</strong>. You're not driving in circles — you're carving real corners and blind crests with 43 feet of elevation under you, in a professional rental kart that'll do over 55 mph.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>The Race</h2>
+    <h3>Four hours. It's a strategy game.</h3>
+    <p>Four drivers share one kart for the full four hours, rotating through pit stops. No limit on how long any driver runs or how many stints they take — that's your team's call. A kart burns roughly <strong>one hour per tank</strong>, so fuel strategy is part of the fight.</p>
+    <ul>
+      <li><b>Qualifying</b> — an ~8-minute session sets the starting grid</li>
+      <li><b>Standing start</b> — then four hours of pit stops, driver swaps and attrition</li>
+      <li><b>Two divisions</b> — Light (175+ lbs) and Heavy (215+ lbs), minimum weight met at every weigh-in</li>
+      <li><b>Ballast</b> — available on-site, but bring your own to guarantee you're legal</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Before You Show Up</h2>
+    <ul>
+      <li><b>Closed-toe shoes.</b> That's it — this is an Arrive &amp; Drive event, no other gear needed</li>
+      <li><b>Under 18?</b> A parent or guardian signs a minor release form. Bring it to check-in, day-of</li>
+      <li><b>Weigh-ins.</b> Miss your division minimum and it's a 3–10 lap penalty</li>
+      <li><b>Transponders.</b> Keep yours secured — a displaced one means a meatball flag, paused scoring and a pit-lane stop</li>
+      <li><b>Black flag.</b> Stop-and-go, and you can't swap drivers during it</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Why We're Racing</h2>
+    <div class="cause">
+      <h3>Caveman Combine</h3>
+      <p>Caveman Combine is a Christ-centered nonprofit that brings men together for a weekend built around physical trials, shared hardship and honest brotherhood — to help men confront what they've been avoiding and step into who they're called to be.</p>
+      <p style="margin-bottom:0">Every dollar raised helps cover the cost of the combine and removes the financial barrier for men who couldn't otherwise come. <strong>Caveman Combine is a registered 501(c)(3), and donations are tax-deductible.</strong></p>
+    </div>
+    <a href="sponsor.html" class="btn ghost" style="margin-top:24px">Get the Sponsorship One-Pager</a>
+    <p class="caption" style="margin-top:12px">Can't race? Sponsor a driver, or take this to a business owner who'd want to.</p>
+  </div>
+</section>
+
+<section id="rsvp">
+  <div class="wrap">
+    <h2>Count Me In</h2>
+    <h3>Grab your spot</h3>
+    <p>Spots are limited and go by team. Tell us you're in and we'll send you the date, pricing and everything you need as soon as it's locked. No payment now.</p>
+    <form id="rsvpForm">
+      <label for="name">Your name</label>
+      <input id="name" name="name" type="text" autocomplete="name" required>
+
+      <label for="phone">Mobile number</label>
+      <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" autocomplete="email" required>
+
+      <label for="status">Where you're at</label>
+      <select id="status" name="status">
+        <option>I'm in — I have a full team of 4</option>
+        <option>I'm in — I have some of a team, need more drivers</option>
+        <option>I'm in — put me on a team, I'm solo</option>
+        <option>Interested — send me the details first</option>
+        <option>Can't race, but I want to sponsor</option>
+      </select>
+
+      <label for="count">How many drivers are you bringing (including you)?</label>
+      <input id="count" name="count" type="number" min="1" max="4" value="1">
+
+      <label for="division">Likely division</label>
+      <select id="division" name="division">
+        <option>Not sure yet</option>
+        <option>Light (175+ lbs)</option>
+        <option>Heavy (215+ lbs)</option>
+      </select>
+
+      <label for="notes">Anything we should know?</label>
+      <textarea id="notes" name="notes" placeholder="Teammate names, questions, sponsor leads..."></textarea>
+
+      <div class="check">
+        <input id="future" name="future" type="checkbox" checked>
+        <label for="future">Keep me posted on this and future Caveman Combine events</label>
+      </div>
+
+      <button type="submit" class="btn" id="submitBtn">Send It</button>
+      <p class="note">We'll only use this to send you race info. No spam, ever.</p>
+    </form>
+
+    <div id="thanks">
+      <h3>You're on the list.</h3>
+      <p style="margin-bottom:0">We'll text you the date, pricing and check-in details as soon as they're locked. Forward this page to anyone who'd want in.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    4-Hour Team Enduro &middot; Atlanta Motorsports Park, Dawsonville GA<br>
+    Benefiting <strong>Caveman Combine</strong>, a 501(c)(3) nonprofit<br>
+    <a href="sponsor.html">Sponsorship info</a>
+  </div>
+</footer>
+
+<script>
+// Swap in the live endpoint once chosen (Formspree / Luma / Apps Script).
+var FORM_ENDPOINT = "";
+
+document.getElementById('rsvpForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var btn = document.getElementById('submitBtn');
+  var data = Object.fromEntries(new FormData(e.target).entries());
+  data.future = document.getElementById('future').checked ? 'yes' : 'no';
+
+  function done(){
+    document.getElementById('rsvpForm').style.display = 'none';
+    document.getElementById('thanks').style.display = 'block';
+    document.getElementById('thanks').scrollIntoView({block:'center'});
+  }
+
+  if(!FORM_ENDPOINT){ console.log('RSVP (no endpoint configured):', data); done(); return; }
+
+  btn.disabled = true; btn.textContent = 'Sending...';
+  fetch(FORM_ENDPOINT, {
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body: JSON.stringify(data)
+  }).then(function(r){
+    if(r.ok){ done(); }
+    else { btn.disabled=false; btn.textContent='Try again'; }
+  }).catch(function(){ btn.disabled=false; btn.textContent='Try again'; });
+});
+</script>
+</body>
+</html>
