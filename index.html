@@ -90,6 +90,17 @@ textarea{min-height:80px;resize:vertical}
 #thanks{display:none;background:var(--surface);border:1px solid var(--amber);border-radius:12px;padding:28px;text-align:center}
 #thanks h3{color:var(--amber)}
 
+.ticker{background:linear-gradient(180deg,#17171C 0%,#111116 100%);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:34px 0;text-align:center}
+.ticker .lbl{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.ticker .big{font-size:clamp(48px,15vw,76px);font-weight:800;line-height:1;letter-spacing:-.03em}
+.ticker .big .of{color:var(--muted);font-size:.42em;font-weight:700;letter-spacing:0}
+.ticker .cap{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.bar{height:12px;background:#000;border:1px solid var(--line);border-radius:99px;overflow:hidden;margin:22px auto 0;max-width:420px}
+.bar i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--amber));border-radius:99px;transition:width .9s cubic-bezier(.2,.8,.2,1)}
+.ticker .need{margin-top:16px;font-size:17px;color:var(--text);font-weight:600}
+.ticker .need b{color:var(--amber)}
+.ticker .stamp{margin-top:9px;font-size:12px;color:var(--muted)}
+.gonogo{max-width:470px;margin:20px auto 0;font-size:14.5px;color:var(--muted);line-height:1.6}
 .presented{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;text-align:center}
 .presented .lbl{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
 .presented img{height:74px;width:auto;display:block;margin:0 auto 10px}
@@ -122,6 +133,18 @@ footer a{color:var(--amber)}
     <a href="sponsor.html" class="btn ghost">Sponsor a Driver</a>
   </div>
 </header>
+
+<div class="ticker" id="ticker">
+  <div class="wrap">
+    <div class="lbl">Drivers committed</div>
+    <div class="big"><span id="tkNow">&mdash;</span><span class="of"> / 80</span></div>
+    <div class="cap">We need 80 to put 20 teams on the grid</div>
+    <div class="bar"><i id="tkBar"></i></div>
+    <div class="need" id="tkNeed">Loading&hellip;</div>
+    <div class="stamp" id="tkStamp"></div>
+    <p class="gonogo">This one's go or no-go. If we don't fill the grid, the race doesn't happen &mdash; so RSVP now even if you're only 90% sure, and forward this to the guys you'd want in your kart. No payment until we hit the number.</p>
+  </div>
+</div>
 
 <div class="presented">
   <div class="wrap">
@@ -220,5 +243,23 @@ footer a{color:var(--amber)}
 </footer>
 
 <script id="luma-checkout" src="https://embed.lu.ma/checkout-button.js"></script>
+<script>
+fetch('count.json?t=' + Date.now()).then(function(r){ return r.json(); }).then(function(d){
+  var n = d.drivers || 0, goal = d.goal || 80, left = Math.max(0, goal - n);
+  document.getElementById('tkNow').textContent = n;
+  document.getElementById('tkBar').style.width = Math.min(100, n / goal * 100) + '%';
+  var need = document.getElementById('tkNeed');
+  if (left > 0) {
+    need.innerHTML = '<b>' + left + '</b> more driver' + (left === 1 ? '' : 's') + ' to make this happen';
+  } else {
+    need.innerHTML = '<b>Grid is full.</b> Register to join the waiting list &mdash; spots open up.';
+  }
+  if (d.updated && d.updated.indexOf('pending') === -1) {
+    document.getElementById('tkStamp').textContent = 'Updated ' + d.updated;
+  }
+}).catch(function(){
+  document.getElementById('tkNeed').textContent = 'We need 80 drivers to make this happen.';
+});
+</script>
 </body>
 </html>
