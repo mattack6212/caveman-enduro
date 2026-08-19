@@ -88,6 +88,11 @@ textarea{min-height:80px;resize:vertical}
 #thanks{display:none;background:var(--surface);border:1px solid var(--amber);border-radius:12px;padding:28px;text-align:center}
 #thanks h3{color:var(--amber)}
 
+.brand{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.brand img{width:56px;height:auto;display:block}
+.brand .bn{font-size:22px;font-weight:800;letter-spacing:-.01em;line-height:1.1}
+.brand .bs{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.footlogo{width:44px;height:auto;opacity:.65;margin-bottom:14px}
 footer{padding:36px 0 60px;text-align:center;color:var(--muted);font-size:13px}
 footer a{color:var(--amber)}
 </style>
@@ -157,7 +162,10 @@ footer a{color:var(--amber)}
   <div class="wrap">
     <h2>Why We're Racing</h2>
     <div class="cause">
-      <h3>Caveman Combine</h3>
+      <div class="brand">
+        <img src="shield.png" alt="Caveman Combine" width="56">
+        <div><div class="bn">Caveman Combine</div><div class="bs">501(c)(3) Nonprofit</div></div>
+      </div>
       <p>Caveman Combine is a Christ-centered nonprofit that brings men together for a weekend built around physical trials, shared hardship and honest brotherhood — to help men confront what they've been avoiding and step into who they're called to be.</p>
       <p style="margin-bottom:0">Every dollar raised helps cover the cost of the combine and removes the financial barrier for men who couldn't otherwise come. <strong>Caveman Combine is a registered 501(c)(3), and donations are tax-deductible.</strong></p>
     </div>
@@ -221,6 +229,7 @@ footer a{color:var(--amber)}
 
 <footer>
   <div class="wrap">
+    <img src="shield.png" class="footlogo" alt="Caveman Combine">
     4-Hour Team Enduro &middot; Atlanta Motorsports Park, Dawsonville GA<br>
     Benefiting <strong>Caveman Combine</strong>, a 501(c)(3) nonprofit<br>
     <a href="sponsor.html">Sponsorship info</a>
