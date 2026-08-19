@@ -88,6 +88,11 @@ textarea{min-height:80px;resize:vertical}
 #thanks{display:none;background:var(--surface);border:1px solid var(--amber);border-radius:12px;padding:28px;text-align:center}
 #thanks h3{color:var(--amber)}
 
+.presented{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;text-align:center}
+.presented .lbl{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.presented img{max-width:230px;width:62%;height:auto;display:block;margin:0 auto}
+.presented .txt{font-size:22px;font-weight:800;letter-spacing:-.01em;color:var(--text)}
+.presented .tag{font-size:12px;color:var(--muted);margin-top:6px}
 .brand{display:flex;align-items:center;gap:16px;margin-bottom:16px}
 .brand img{width:56px;height:auto;display:block}
 .brand .bn{font-size:22px;font-weight:800;letter-spacing:-.01em;line-height:1.1}
@@ -114,6 +119,15 @@ footer a{color:var(--amber)}
     <a href="sponsor.html" class="btn ghost">Sponsor a Driver</a>
   </div>
 </header>
+
+<div class="presented">
+  <div class="wrap">
+    <div class="lbl">Presented by</div>
+    <!-- swap the line below for: <img src="foundation-financial.png" alt="Foundation Financial"> -->
+    <div class="txt">Foundation Financial</div>
+    <div class="tag">Proud presenting sponsor of the 2026 Caveman Combine Enduro</div>
+  </div>
+</div>
 
 <section>
   <div class="wrap">
@@ -233,6 +247,7 @@ footer a{color:var(--amber)}
     <img src="shield.png" class="footlogo" alt="Caveman Combine">
     4-Hour Team Enduro &middot; Atlanta Motorsports Park, Dawsonville GA<br>
     Benefiting <strong>Caveman Combine</strong>, a 501(c)(3) nonprofit<br>
+    Presented by <strong>Foundation Financial</strong><br>
     <a href="sponsor.html">Sponsorship info</a>
   </div>
 </footer>
