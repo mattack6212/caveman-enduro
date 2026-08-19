@@ -43,6 +43,18 @@ li::before{content:"";position:absolute;left:2px;top:15px;width:6px;height:6px;b
 .presented .lbl{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);flex:0 0 78px;line-height:1.4}
 .presented .txt{font-size:17px;font-weight:800}
 .presented img{height:42px;width:auto}
+.formsheet{margin-top:30px;border-top:3px solid var(--accent);padding-top:22px}
+.formsheet h3{font-size:21px;margin-bottom:4px}
+.formsheet .sh{font-size:13.5px;color:var(--muted);margin-bottom:16px}
+.fr{display:flex;gap:14px;margin-bottom:15px}
+.fld{flex:1}
+.fld .lb{font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.fld .ln{border-bottom:1.3px solid #9AA0AC;height:23px}
+.lvl{border:1px solid var(--line);border-radius:5px;padding:13px 16px;margin-bottom:15px}
+.lvl .row2{display:flex;align-items:center;gap:9px;padding:5px 0;font-size:14px}
+.box{width:14px;height:14px;border:1.5px solid var(--ink);border-radius:2px;flex:0 0 14px}
+.retn{background:#FAF7F1;border-left:3px solid var(--amber);padding:13px 17px;border-radius:0 5px 5px 0;font-size:13.5px;margin-top:4px}
+@media print{ .formsheet{page-break-before:always;border-top:none;padding-top:0} }
 .fine{font-size:12.5px;line-height:1.5;color:var(--muted);border-top:1px solid var(--line);margin-top:26px;padding-top:14px}
 .printbtn{display:block;max-width:760px;margin:0 auto 16px;background:var(--ink);color:#fff;border:none;border-radius:6px;padding:14px;font-size:15px;font-weight:700;cursor:pointer}
 @media print{
@@ -78,19 +90,20 @@ li::before{content:"";position:absolute;left:2px;top:15px;width:6px;height:6px;b
     <p><strong>Where your donation goes:</strong> every dollar helps cover the cost of putting on the combine and removes the financial barrier for men who want to come but can't afford it. Your gift is what puts a man in the room who otherwise wouldn't be there.</p>
   </div>
 
-  <h2>What Sponsorship Buys</h2>
+  <h2>What Sponsorship Does</h2>
   <ul>
-    <li><strong>You put a man through the combine.</strong> Sponsorship dollars fund seats for men who couldn't pay their own way</li>
-    <li><strong>Your business is named on the car.</strong> Sponsors are recognized on the team's kart and race apparel &mdash; email your logo to mattmcfarlane@gmail.com</li>
-    <li><strong>You're credited publicly</strong> — event announcements, race-day recognition and post-race social coverage</li>
-    <li><strong>It's tax-deductible.</strong> Caveman Combine is a registered 501(c)(3); you'll get a written acknowledgment for your records</li>
+    <li><strong>It puts a man through the combine.</strong> This is the point. Your gift funds seats for men who can't cover the cost themselves</li>
+    <li><strong>It's tax-deductible.</strong> Caveman Combine is a registered 501(c)(3). You'll receive a written acknowledgment for your records</li>
+    <li><strong>Your logo goes on the sponsor banners</strong> displayed trackside at Atlanta Motorsports Park on race day</li>
+    <li><strong>You're named at the event</strong> and in our race-day and post-race coverage</li>
+    <li><strong>Your logo goes on the event website</strong> alongside the other sponsors</li>
   </ul>
 
   <h2>Sponsorship Levels</h2>
   <div class="tiers">
-    <div class="tier"><div class="amt">$1,000</div><div><span class="nm">Full Team &mdash; underwrites four seats</span><span class="ds">Presenting sponsor of a team. Top billing on the kart and team apparel, plus event and post-race recognition.</span></div></div>
-    <div class="tier"><div class="amt">$500</div><div><span class="nm">Two Seats</span><span class="ds">Business name and logo on the kart and in event recognition.</span></div></div>
-    <div class="tier"><div class="amt">$250</div><div><span class="nm">One Seat</span><span class="ds">Underwrites a single driver's place in the race. Business name on the kart.</span></div></div>
+    <div class="tier"><div class="amt">$1,000</div><div><span class="nm">Full Team &mdash; underwrites four seats</span><span class="ds">Top billing on the trackside banners and the event site, named first in event and post-race recognition.</span></div></div>
+    <div class="tier"><div class="amt">$500</div><div><span class="nm">Two Seats</span><span class="ds">Logo on the trackside banners and the event site, named in event recognition.</span></div></div>
+    <div class="tier"><div class="amt">$250</div><div><span class="nm">One Seat</span><span class="ds">Underwrites a single driver's place in the race. Logo on the trackside banners and the event site.</span></div></div>
     <div class="tier"><div class="amt">Any amount</div><div><span class="nm">Supporter</span><span class="ds">Every dollar goes to the same place. Named in event recognition.</span></div></div>
   </div>
   <p style="margin-top:11px;font-size:13.5px;color:var(--muted)">Sponsorships underwrite seats in the race for men Caveman Combine selects &mdash; they are gifts to the organization, not payments on behalf of any named individual.</p>
@@ -109,10 +122,44 @@ li::before{content:"";position:absolute;left:2px;top:15px;width:6px;height:6px;b
     <div class="row"><div class="k">Donate online</div><div class="v fill">[Donation link]</div></div>
     <div class="row"><div class="k">EIN</div><div class="v fill">[EIN]</div></div>
     <div class="row"><div class="k">Questions</div><div class="v">Matt McFarlane, Caveman Combine representative<br>863-221-8305 &middot; mattmcfarlane@gmail.com</div></div>
-    <div class="row"><div class="k">Send your logo</div><div class="v">Email a high-resolution logo to <strong>mattmcfarlane@gmail.com</strong> (PNG or vector) so we can get it on the kart</div></div>
+    <div class="row"><div class="k">Send your logo</div><div class="v">Email a high-resolution logo to <strong>mattmcfarlane@gmail.com</strong> (PNG or vector) so it makes the banners</div></div>
     <div class="row"><div class="k">Deadline</div><div class="v fill">[Sponsorship deadline]</div></div>
   </div>
   <p style="margin-top:12px;font-size:14px">Please make your gift <strong>directly to Caveman Combine</strong> — not to a driver or team — so it's properly receipted and fully deductible.</p>
+
+  <div class="formsheet">
+    <div class="logoslot"><img src="shield.png" alt="Caveman Combine"><div class="nm">Caveman<br>Combine</div></div>
+    <h3>Sponsor Commitment Form</h3>
+    <div class="sh">4-Hour Team Enduro &middot; Atlanta Motorsports Park &middot; Sunday, October 18, 2026</div>
+
+    <div class="fr">
+      <div class="fld"><div class="lb">Business name (as it should appear on the banner)</div><div class="ln"></div></div>
+    </div>
+    <div class="fr">
+      <div class="fld"><div class="lb">Contact name</div><div class="ln"></div></div>
+      <div class="fld"><div class="lb">Phone</div><div class="ln"></div></div>
+    </div>
+    <div class="fr">
+      <div class="fld"><div class="lb">Email</div><div class="ln"></div></div>
+      <div class="fld"><div class="lb">Website</div><div class="ln"></div></div>
+    </div>
+
+    <div class="lvl">
+      <div class="row2"><div class="box"></div><div><strong>$1,000</strong> &mdash; Full Team (underwrites four seats)</div></div>
+      <div class="row2"><div class="box"></div><div><strong>$500</strong> &mdash; Two Seats</div></div>
+      <div class="row2"><div class="box"></div><div><strong>$250</strong> &mdash; One Seat</div></div>
+      <div class="row2"><div class="box"></div><div><strong>Other amount</strong> &nbsp;$__________________</div></div>
+    </div>
+
+    <div class="fr">
+      <div class="fld"><div class="lb">Authorized signature</div><div class="ln"></div></div>
+      <div class="fld"><div class="lb">Date</div><div class="ln"></div></div>
+    </div>
+
+    <div class="retn">
+      <strong>Return this form</strong> to Matt McFarlane &mdash; photograph or scan it to <strong>mattmcfarlane@gmail.com</strong>, or text it to <strong>863-221-8305</strong>. <strong>Email your logo</strong> to the same address as a PNG or vector file so it makes the banner. Payment instructions and your written acknowledgment come directly from Caveman Combine.
+    </div>
+  </div>
 
   <div class="fine">
     Caveman Combine is a 501(c)(3) tax-exempt organization and contributions are tax-deductible to the extent allowed by law. Sponsorships are unrestricted gifts to Caveman Combine to fund this event; the organization determines how seats are awarded, and gifts are not earmarked for any named individual. Sponsor recognition is limited to name and logo acknowledgment. Caveman Combine will provide written acknowledgment of each gift. Where a donor receives goods or services in return, the deductible amount is reduced by the fair market value of what was received &mdash; including where a donor or a member of the donor's family races in the event. This is not tax advice; please consult your tax advisor.
