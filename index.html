@@ -84,6 +84,8 @@ textarea{min-height:80px;resize:vertical}
 .check{display:flex;gap:12px;align-items:flex-start;margin-top:20px}
 .check input{width:20px;height:20px;flex:0 0 20px;margin-top:2px;accent-color:var(--accent)}
 .check label{margin:0;text-transform:none;letter-spacing:0;font-size:15px;font-weight:400;color:var(--text);line-height:1.45}
+.lumawrap{margin-top:22px}
+.altlink{display:block;text-align:center;margin-top:16px;font-size:14px;color:var(--amber)}
 .note{font-size:13px;color:var(--muted);margin-top:16px;text-align:center}
 #thanks{display:none;background:var(--surface);border:1px solid var(--amber);border-radius:12px;padding:28px;text-align:center}
 #thanks h3{color:var(--amber)}
@@ -194,50 +196,14 @@ footer a{color:var(--amber)}
     <h2>Count Me In</h2>
     <h3>Grab your spot</h3>
     <p><strong>Sunday, October 18 &middot; $240 per driver.</strong> Spots are limited and go by team. Tell us you're in and we'll send you the start time, check-in details and payment info as soon as they're locked. No payment now.</p>
-    <form id="rsvpForm">
-      <label for="name">Your name</label>
-      <input id="name" name="name" type="text" autocomplete="name" required>
-
-      <label for="phone">Mobile number</label>
-      <input id="phone" name="phone" type="tel" autocomplete="tel" required>
-
-      <label for="email">Email</label>
-      <input id="email" name="email" type="email" autocomplete="email" required>
-
-      <label for="status">Where you're at</label>
-      <select id="status" name="status">
-        <option>I'm in — I have a full team of 4</option>
-        <option>I'm in — I have some of a team, need more drivers</option>
-        <option>I'm in — put me on a team, I'm solo</option>
-        <option>Interested — send me the details first</option>
-        <option>Can't race, but I want to sponsor</option>
-      </select>
-
-      <label for="count">How many drivers are you bringing (including you)?</label>
-      <input id="count" name="count" type="number" min="1" max="4" value="1">
-
-      <label for="division">Likely division</label>
-      <select id="division" name="division">
-        <option>Not sure yet</option>
-        <option>Light (175+ lbs)</option>
-        <option>Heavy (215+ lbs)</option>
-      </select>
-
-      <label for="notes">Anything we should know?</label>
-      <textarea id="notes" name="notes" placeholder="Teammate names, questions, sponsor leads..."></textarea>
-
-      <div class="check">
-        <input id="future" name="future" type="checkbox" checked>
-        <label for="future">Keep me posted on this and future Caveman Combine events</label>
-      </div>
-
-      <button type="submit" class="btn" id="submitBtn">Send It</button>
-      <p class="note">We'll only use this to send you race info. No spam, ever.</p>
-    </form>
-
-    <div id="thanks">
-      <h3>You're on the list.</h3>
-      <p style="margin-bottom:0">We'll text you the start time, check-in details and payment info as soon as they're locked. Forward this page to anyone who'd want in.</p>
+    <div class="lumawrap">
+      <a href="https://luma.com/drvgoc1k"
+         class="btn luma-checkout--button"
+         data-luma-action="checkout"
+         data-luma-event-id="evt-3Npey9Hv1hy2FVu">Register My Spot</a>
+      <a class="altlink" href="https://luma.com/drvgoc1k">or open the registration page &rarr;</a>
+      <p class="note">Free to register &mdash; no payment now. We'll email you the start time, check-in details and payment info as soon as they're locked.</p>
+    </div>
     </div>
   </div>
 </section>
@@ -252,34 +218,6 @@ footer a{color:var(--amber)}
   </div>
 </footer>
 
-<script>
-// Swap in the live endpoint once chosen (Formspree / Luma / Apps Script).
-var FORM_ENDPOINT = "";
-
-document.getElementById('rsvpForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  var btn = document.getElementById('submitBtn');
-  var data = Object.fromEntries(new FormData(e.target).entries());
-  data.future = document.getElementById('future').checked ? 'yes' : 'no';
-
-  function done(){
-    document.getElementById('rsvpForm').style.display = 'none';
-    document.getElementById('thanks').style.display = 'block';
-    document.getElementById('thanks').scrollIntoView({block:'center'});
-  }
-
-  if(!FORM_ENDPOINT){ console.log('RSVP (no endpoint configured):', data); done(); return; }
-
-  btn.disabled = true; btn.textContent = 'Sending...';
-  fetch(FORM_ENDPOINT, {
-    method:'POST',
-    headers:{'Content-Type':'application/json','Accept':'application/json'},
-    body: JSON.stringify(data)
-  }).then(function(r){
-    if(r.ok){ done(); }
-    else { btn.disabled=false; btn.textContent='Try again'; }
-  }).catch(function(){ btn.disabled=false; btn.textContent='Try again'; });
-});
-</script>
+<script id="luma-checkout" src="https://embed.lu.ma/checkout-button.js"></script>
 </body>
 </html>
