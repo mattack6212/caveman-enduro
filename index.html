@@ -142,6 +142,7 @@ footer a{color:var(--amber)}
     <div class="bar"><i id="tkBar"></i></div>
     <div class="need" id="tkNeed">Loading&hellip;</div>
     <div class="stamp" id="tkStamp"></div>
+    <div id="tkTeam" style="display:none;max-width:470px;margin:16px auto 0;background:rgba(245,166,35,.09);border:1px solid rgba(245,166,35,.35);border-radius:10px;padding:14px 18px;font-size:15px;color:var(--text);line-height:1.5"></div>
     <p class="gonogo" id="tkGoNoGo">This one's go or no-go. If we don't fill the grid, the race doesn't happen &mdash; so RSVP now even if you're only 90% sure, and forward this to the guys you'd want in your kart. No payment until we hit the number.</p>
   </div>
 </div>
@@ -272,6 +273,12 @@ fetch('count.json?t=' + Date.now()).then(function(r){ return r.json(); }).then(f
   } else {
     need.innerHTML = '<b>We hit the number &mdash; the race is on.</b> Still room to grow: every driver past 80 adds another team to the grid.';
     document.getElementById('tkGoNoGo').innerHTML = 'We got there. Keep signing up &mdash; extra drivers mean more teams on the grid, and anyone past a full field goes on the waiting list. Forward this to the guys you\'d want in your kart.';
+  }
+  if (d.maxPerGuest > 0) {
+    var tm = document.getElementById('tkTeam');
+    tm.innerHTML = '<b>Signing up your whole crew?</b> Register once and add up to ' + d.maxPerGuest +
+      ' more drivers as guests &mdash; you don\'t need their email addresses.';
+    tm.style.display = 'block';
   }
   if (d.updated && d.updated.indexOf('pending') === -1) {
     document.getElementById('tkStamp').textContent = 'Updated ' + d.updated;
